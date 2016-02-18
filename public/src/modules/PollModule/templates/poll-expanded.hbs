@@ -1,0 +1,80 @@
+<div class="poll-expanded unanswered category-{{poll.category}}--border">
+	<div class="poll-expanded-header">
+        <!-- <div class="poll-header-track"></div> -->
+        <div class="poll-expanded-header-text">
+            {{poll.text}}
+        </div>
+    </div>
+
+    <!--  -->
+    <!--  -->
+
+    <div class="poll-expanded-body">
+    {{#each poll.choices}}
+		<div class="choice-expanded textchoice-expanded" data-choiceid="{{this.id}}">
+	        <div class="textchoice-expanded-overlay category-{{../poll.category}}--overlay"></div>
+	        <div class="textchoice-expanded-main">
+	            <div class="textchoice-expanded-main-check">
+	                
+	            </div>
+	            <div class="textchoice-expanded-main-text">
+	                {{this.text}}
+	            </div>
+	            <div class="textchoice-expanded-text-main-percent choice-percent-text"> 
+
+	            </div>
+	        </div>
+		</div>
+	{{/each}}
+	</div>
+
+	<!--  -->
+	<!--  -->
+
+	<div class="poll-expanded-footer-data">
+        <span class="poll-expanded-footer-data-category">
+        	<select class="demographic-selector">
+				<option value="male">Male voters</option>
+				<option value="female">Female voters</option>
+				<option value="single">Single voters</option>
+				<option value="married">Married voters</option>
+			</select>
+
+<!-- 			<div class="demographic-selector ui inline dropdown">
+			  <input type="hidden" name="gender">
+			  <div class="text">Shiba Inu</div>
+			  <i class="dropdown icon"></i>
+			  <div class="menu">
+			    <div class="item">
+			      <i class="dropdown icon"></i>
+			      <span class="text">Dogs</span>
+			      <div class="menu">
+			        <div class="item">Shiba Inu</div>
+			        <div class="item">
+			          <i class="dropdown icon"></i>
+			          <span class="text">Poodle</span>
+			          <div class="menu">
+			            <div class="item">Toy</div>
+			            <div class="item">Standard</div>
+			          </div>
+			        </div>
+			        <div class="item">Labrador</div>
+			      </div>
+			    </div>
+			    <div class="item">
+			      <i class="dropdown icon"></i>
+			      <span class="text">Cats</span>
+			      <div class="menu">
+			        <div class="item">Aegean</div>
+			        <div class="item">Balinese</div>
+			        <div class="item">Persian</div>
+			      </div>
+			    </div>
+			  </div>
+			</div> -->
+
+        </span>
+        <span class="poll-expanded-footer-data-votes">{{poll.category}} &middot; {{poll.votes}} votes</span>
+    </div>
+
+</div>

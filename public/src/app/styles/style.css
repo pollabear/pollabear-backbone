@@ -1,0 +1,248 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+/*html {overflow-y:scroll;}*/
+html, body {
+    /*height: 100%;*/
+    /*width: 100%;*/
+}
+
+body {
+	min-height: 1300px;
+
+	background: #f5f6f6;
+
+	/*background-repeat: no-repeat;*/
+    /*background-image: linear-gradient(rgb(104, 145, 162), rgb(12, 97, 33));*/
+	/*background-color: #29354B;*/
+	/*background-color: #eaedea;*/
+	/*background-color: #eff0f4;*/
+    font-family: 'Avenir-Book', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif !important;
+}
+
+#main {
+	/*position: relative;*/
+	/*height: 100%;*/
+	/*width: 100%;*/
+	margin-top: 75px;
+	/*overflow: hidden;*/
+	/*box-sizing: border-box;*/
+}
+
+#home-container {
+	/*position: relative;*/
+	/*height: 100%;*/
+	/*width: 100%;*/
+}
+
+#grid-container {
+/*	position: absolute;
+	right: 0;
+	top: 0;
+	left: 220px;
+
+	margin-top: 75px;
+
+	min-height: 100px;*/
+	/*height: 100%;*/
+	/*width: 100%;*/
+/*	margin: 0 auto;
+	max-width: 1000px;*/
+}
+
+#sidebar {
+	position: fixed;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	/*height: 100%;*/
+	width: 220px;
+	margin-top: 57px;
+	background-color: white;
+
+	border-right-width: 1px;
+	border-right-style: solid; 
+	border-right-color: #ebebeb; 
+	overflow: hidden;
+
+}
+
+.sidebar-pollabear {
+	height: 170px; 
+	width: 170px;
+	padding: 25px;
+	background-color: #f8fafa;
+}
+
+.sidebar-pollapoints {
+	height: 60px; 
+	width: 220px;
+	background-color: #f8fafa;
+	color: #484a4a;
+	text-align: center;
+
+/*	border-top-width: 1px;
+	border-top-style: solid; 
+	border-top-color: #ebebeb;*/ 
+	/*background-color: #f8fafa;*/
+}
+
+.user-pollabear {
+	width: 170px;
+	height: 170px;
+	-moz-border-radius: 100px;
+	-webkit-border-radius: 100px;
+	border-radius: 200px;
+}
+
+.sidebar-more {
+	display: none;
+	position: absolute;
+	top: 330px;
+	/*height: 100px;*/
+	bottom: 0;
+	width: 220px;
+	border-top-width: 1px;
+	border-top-style: solid; 
+	border-top-color: #ebebeb; 
+	overflow-x: hidden; 
+	overflow-y: scroll; 
+}
+
+.sidebar-more-element {
+	margin: 10px;
+	height: 50px;
+	width: 200px;
+	background-color: #f8fafa;
+}
+
+
+.noscroll {
+	overflow: hidden;
+/*	-webkit-filter: blur(5px);
+	-moz-filter: blur(5px);
+	-o-filter: blur(5px);
+	-ms-filter: blur(5px);
+	filter: blur(1px);*/
+}
+
+.hidden {
+	display: none;
+}
+
+#overlay {
+    position: fixed;
+    top: 100%;
+    left: 0;
+    right: 0;
+    /*bottom: 0;*/
+    height: 100%;
+	width: 100%;
+    z-index: 10000;
+    overflow-y: scroll;
+
+    filter:alpha(opacity=0);
+    -moz-opacity:0;
+    -khtml-opacity:0;
+	opacity: 0;
+
+	background: rgba(245, 246, 246, 0.95);
+	background-color: #29354B;
+	/*background-color: white;*/
+}
+
+#overlay-content {
+	padding-top: 70px;
+	/*background: rgba(255, 255, 255, 0.95);*/
+	/*min-height: 100%;*/
+	/*box-sizing: border-box;*/
+	
+	/*overflow-y: scroll;*/
+}
+
+#overlay-background {
+/*	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;*/
+	height: 100%;
+	width: 100%;
+	filter:alpha(opacity=0.85);
+    -moz-opacity:.85;
+    -khtml-opacity: .85;
+    opacity: .85;
+    background-color: #a9a9a9;
+}
+
+#overlay-exit {
+	position: absolute;
+	top: 15px;
+	right: 30px;
+	font-size: 30px;
+	font-weight: bolder;
+	color: #888;
+	cursor: pointer;
+	transition: 0.2s;
+}
+
+#overlay-exit:hover {
+	-ms-transform: scale(1.5,1.5); /* IE 9 */
+	-webkit-transform: scale(1.5,1.5); /* Chrome, Safari, Opera */
+	transform: scale(1.5,1.5);
+}
+
+#inner {
+	position: static;
+}
+
+.container {
+	/*height: 400px;*/
+	/*overflow: auto;*/
+}
+
+#infinite-container {
+	width: 500px;
+	float: left;
+	margin-right: 15px;
+	margin-left: 15px;
+	/*background-color: black;*/
+}
+
+#grid-container {
+	/*min-width: 775px;*/
+		/*overflow: auto;*/
+}
+
+#masonry-grid {
+	margin: 0 auto;
+	/*width: 100%;*/
+}
+
+
+.stamp-banner {
+	height: 150px;
+	width: 480px;
+	background-color: lightgreen;
+	margin-bottom: 20px;
+	color: white;
+	text-align: center;
+	padding: 20px;
+}
+
+
+.pollapoints-text {
+	font-size: 15px;
+}
+
+.pollapoints-number {
+	font-size: 40px;
+	letter-spacing: 10px;
+}
+
+
+
+
+

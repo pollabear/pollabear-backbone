@@ -1,0 +1,207 @@
+
+/*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                               Poll
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.poll-expanded {
+	width: 600px;
+	background-color: white;
+
+
+	/*margin-top: 10px;*/
+	/*margin-bottom: 20px;*/
+	margin: 0 auto;
+
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+
+	/*border: 1px solid #FFF;*/
+
+	-moz-box-shadow: 0 2px 3px rgba(0,0,0,0.12);
+    -webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.12);
+    box-shadow: 0 2px 3px rgba(0,0,0,0.12);
+
+	font-style: normal;
+	font-variant: normal;
+	/*line-height: 18px;*/
+	font-weight: normal;
+}
+
+	/*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                                  Poll Header
+	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+	.poll-expanded-header {
+		/*overflow: hidden;*/
+		/*width: 100%;*/
+		/*cursor: pointer;*/
+		padding: 30px;
+	}
+
+		.poll-expanded-header-text {
+			font-size: 22px;
+
+			text-align: center;
+			/*font-weight: 600;*/
+
+		}
+
+		.poll-expanded-header-text > a {
+			 text-decoration: none !important;
+			 color: inherit;
+		}
+
+	/*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                                  Poll Body
+	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+	.poll-expanded-body {
+		margin-bottom: 20px;
+	}
+
+	.choice-expanded {
+		background-color: #f8fafa;
+		/*background-color: #ecf0f1;*/
+	}
+
+	.choice-expanded-highlight {
+		background-color: lightgreen;
+	}
+
+		/*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                                       Text Choice
+		- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+		/* for text only */
+		.textchoice-expanded {
+			min-height: 40px;
+			position: relative;
+			margin-left: 30px;
+			margin-right: 30px;
+			/*margin-top: 10px;*/
+			margin-bottom: 12px;
+
+			/*-moz-border-radius: 5px;
+			-webkit-border-radius: 5px;
+			border-radius: 15px;*/
+
+			/*border-width: 1px;
+			border-style: solid;
+			border-color: #eee;*/
+
+			transition: all .1s linear;
+
+		}
+
+			.textchoice-expanded-overlay {
+				/*display: none;*/
+				position: absolute;
+				left: 0;
+				top: 0;
+				height: 100%;
+				/*opacity: 0.6;*/
+				width: 0%;
+
+				/*-moz-border-radius: 5px 0px 0px 5px;
+				-webkit-border-radius: 5px 0px 0px 5px;
+				border-radius: 13px 0px 0px 13px;*/
+			}
+
+			.textchoice-expanded-main {
+				/* HACK: set opacity in order to ensure proper z-ordering */
+				opacity: 0.99; 
+				width: 100%;
+				overflow: auto;
+
+				display: -webkit-flexbox;
+			    display: -ms-flexbox;
+			    display: -webkit-flex;
+			    display: flex;
+			    -webkit-flex-align: center;
+			    -ms-flex-align: center;
+			    -webkit-align-items: center;
+			    align-items: center;
+
+			    font-size: 18px;
+				/*color: white;*/
+			}
+
+				.textchoice-expanded-main-check {
+					float: left;
+					width: 75px;
+					text-align: center;
+					padding-top: 15px;
+			    	padding-bottom: 15px;
+
+				}
+
+				.textchoice-expanded-main-text {
+					float: left;
+					/* take up remaining space */
+					/* use span tag ???? */
+					width: 390px;
+					text-align: center;
+					padding-top: 15px;
+			    	padding-bottom: 15px;
+				}
+
+				/*BAD PERFORMANCE*/
+				/*.poll-expanded > .poll-body > .choice > .choice-main > .choice-main-text {
+					width: 380px;
+				}*/
+
+				.textchoice-expanded-main-percent {
+					float: left;
+					width: 75px;
+					text-align: center;
+					padding-top: 15px;
+			    	padding-bottom: 15px;
+			    	/*opacity: 0;*/
+				}
+
+	/*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                                  Poll Footer
+	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+	.poll-expanded-footer-data {
+		width: 540px;
+		overflow: hidden;
+		padding-left: 30px;
+		padding-right: 30px;
+		padding-bottom: 10px; 
+		/*margin-top: 20px;*/
+		/*margin-bottom: 500px;*/
+		font-size: 18px;
+
+		color:#a1a1a1;
+	}
+
+		.poll-expanded-footer-data-category {
+			float: left;
+			/*color: #999;*/
+		}
+
+		.poll-expanded-footer-data-votes {
+			float: right;
+			/*color: #999;*/
+		}
+
+
+
+/*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+                              Animations
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
+
+.unanswered .choice-expanded:hover { 
+	background-color: lightgreen;
+	cursor: pointer;
+	/*color: white;*/
+}
+
+.demographic-selector {
+	z-index: 1000;
+}
+
+
+

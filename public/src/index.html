@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+<!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Replace with favicon -->
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <!-- <link rel="icon" href="/dist/assets/favicon.ico"> -->
+
+    <title>Pollabear</title>
+
+    <!-- CSS -->
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="https://oss.maxcdn.com/semantic-ui/2.1.8/semantic.min.css">  -->
+
+
+    <!--(if target dist)><!-->
+
+    <link rel="stylesheet" href="/css/pollabear.min.css"> 
+
+    <!--<!(endif)-->
+
+    <!--(if target dev)><!-->
+
+    <link rel="stylesheet" href="src/modules/HomeModule/styles/style.css"> 
+    <link rel="stylesheet" href="/css/category/category-grid.css"> 
+    <link rel="stylesheet" href="/css/main/nav.css"> 
+    <link rel="stylesheet" href="/css/misc/material-icons.css"> 
+    <link rel="stylesheet" href="/css/poll/poll.css"> 
+    <link rel="stylesheet" href="/css/poll/poll-expanded.css"> 
+    <link rel="stylesheet" href="/css/poll/pollpage.css"> 
+    <link rel="stylesheet" href="/css/category/category.css"> 
+
+    <!--<!(endif)-->
+
+</head>
+<body> 
+
+    <ul id="nav" class="navbar navbar-fixed">
+        <li class="navbar-item"><a class="navbar-link" href="/">Pollabear</a></li>
+
+        <li class="navbar-item">
+            <div class="search-container">
+            </div>
+        </li>
+        <ul class="navbar navbar-right-wrapper">
+            <li class="navbar-item"><a class="navbar-link" href="/categories">Category</a></li>
+            <li class="navbar-item"><a class="navbar-link" href="/create">Create</a></li>
+            <li class="navbar-item"><a class="navbar-link" href="/profile">Profile</a></li>
+        </ul>
+    </ul>
+
+    <div id="main"></div>
+
+    <div id="overlay" class="hidden">
+        <div id="overlay-exit">X</div>
+        <!-- <div id="overlay-background"></div> -->
+        <div id="overlay-content"></div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- InfinityJS 
+    <script src="/libs/infinity.min.js"></script> -->
+    <!-- UnderscoreJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+    <!-- BackboneJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.2.3/backbone-min.js"></script>
+    <!-- Handlebars Runtime -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.runtime.min.js"></script>
+    <!-- Masonry Runtime -->
+    <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script> -->
+    <!-- ChartJS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+
+    <!--<script src="https://oss.maxcdn.com/semantic-ui/2.1.8/semantic.min.js"></script>-->
+
+
+    <!--(if target dist)><!-->
+
+    <script src="/js/pollabear.min.js"></script>
+
+    <!--<!(endif)-->
+
+
+    <!--(if target dev)><!-->
+
+    <!-- Templates -->
+    <script src="/js/templates.js"></script>
+    <!-- API-dev -->
+    <script src="/js/API-dev.js"></script>
+    <!-- Elements -->
+    <script src="/js/elements.js"></script>
+    <!-- Router -->
+    <script src="/js/routers/router.js"></script>
+    <!-- Handlebars Helpers -->
+    <script src="/js/hbs.js"></script>
+    <!-- PollView-->
+    <script src="/js/views/PollView.js"></script>
+    <!-- PollDetail-->
+    <script src="/js/views/PollDetail.js"></script>
+    <!-- HomeView -->
+    <script src="/js/views/homeview.js"></script>
+    <!-- CategoryView -->
+    <script src="/js/views/categoryview.js"></script>
+    <!-- PollGrid -->
+    <script src="/js/views/pollgrid.js"></script>
+    <!-- Poll Model -->
+    <script src="/js/models/poll.js"></script>
+    <!-- Polls Collection -->
+    <script src="/js/collections/polls.js"></script>
+    <!-- App -->
+    <script src="/js/app.js"></script>
+
+    <!--<!(endif)-->
+
+
+
+</body>
+</html>

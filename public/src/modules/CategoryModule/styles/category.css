@@ -1,0 +1,65 @@
+
+
+/* SOCIAL */
+
+.color-primary-0 { color: #1C8633 }	/* Main Primary color */
+.color-primary-1 { color: #43B85D }
+.color-primary-2 { color: #1ADB45 }
+.color-primary-3 { color: #007219 }
+.color-primary-4 { color: #009D23 }
+
+.color-secondary-1-0 { color: #1A5C6E }	/* Main Secondary color (1) */
+.color-secondary-1-1 { color: #3A8398 }
+.color-secondary-1-2 { color: #1EA2C8 }
+.color-secondary-1-3 { color: #024A5E }
+.color-secondary-1-4 { color: #026581 }
+
+.color-secondary-2-0 { color: #B16C25 }	/* Main Secondary color (2) */
+.color-secondary-2-1 { color: #F4A758 }
+.color-secondary-2-2 { color: #FF901E }
+.color-secondary-2-3 { color: #974C00 }
+.color-secondary-2-4 { color: #CF6900 }
+
+.color-complement-0 { color: #B13225 }	/* Main Complement color */
+.color-complement-1 { color: #F46758 }
+.color-complement-2 { color: #FF341E }
+.color-complement-3 { color: #970E00 }
+.color-complement-4 { color: #CF1400 }
+
+
+
+
+
+.category-Social--overlay {
+	 background-color: #FF8A80;
+}
+
+.category-Politics--overlay {
+	 background-color: #F48FB1;
+}
+
+.category-Funny--overlay {
+	 background-color: #CE93D8;
+}
+
+.category-Sports--overlay {
+	 background-color: #B39DDB;
+}
+
+
+.category-Food--overlay {
+	 background-color: #8C9EFF;
+}
+
+.category-Games--overlay {
+	 background-color: #80D8FF;
+}
+
+.category-Music--overlay {
+	 background-color: #69F0AE;
+}
+
+.category-Travel--overlay {
+	 background-color: #A7FFEB;
+}
+

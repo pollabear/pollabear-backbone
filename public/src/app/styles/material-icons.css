@@ -1,0 +1,28 @@
+
+.material-icons.icon-more {
+	margin: 0px;
+	padding: 0px;
+	margin-left: 12px;
+	margin-right: 12px;
+	cursor: pointer;
+}
+
+.material-icons.icon-lightgrey { 
+	color: #e8eaea; 
+}
+
+.material-icons.icon-darkgrey { 
+	color: #888a8a; 
+}
+
+/*.material-icons.lightgrey { 
+	color: #e8eaea; 
+	margin-left: 12px;
+	margin-right: 12px;
+}
+
+.material-icons.lightgrey { 
+	color: #e8eaea; 
+	margin-left: 12px;
+	margin-right: 12px;
+}*/

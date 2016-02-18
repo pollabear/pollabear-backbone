@@ -1,0 +1,53 @@
+<div class="poll unanswered category-{{poll.category}}--border">
+	<div class="poll-header">
+        <!-- <div class="poll-header-track"></div> -->
+        <div class="poll-header-text">
+        <a href="/poll/{{poll.id}}">
+            {{poll.text}}
+        </a>
+        </div>
+    </div>
+
+    <!--  -->
+    <!-- {{../poll.category}} -->
+
+    <div class="poll-body">
+    {{#each poll.choices}}
+		<div class="choice textchoice" data-choiceid="{{this.id}}">
+	        <div class="textchoice-overlay category-{{../poll.category}}--overlay"></div>
+	        <div class="textchoice-main">
+	            <div class="textchoice-main-check">
+	                <i class="material-icons">done</i>
+	            </div>
+	            <div class="textchoice-main-text">
+	                {{this.text}}
+	            </div>
+	            <div class="choice-percent-text"> 
+
+	            </div>
+	        </div>
+		</div>
+	{{/each}}
+	</div>
+
+	<!--  -->
+	<!--  -->
+
+	<div class="poll-footer-data">
+        <span class="poll-footer-data-category">{{poll.category}}</span>
+        <span class="poll-footer-data-votes">{{poll.votes}} votes</span>
+    </div>
+
+    <div class="poll-footer-more">
+    	<i class="material-icons md-36 icon-more icon-lightgrey">poll</i>
+    	<i class="material-icons md-36 icon-more icon-lightgrey">people</i>
+    	<i class="material-icons md-36 icon-more icon-lightgrey">comment</i>
+    	<i class="material-icons md-36 icon-more icon-lightgrey">favorite</i>
+    <!-- 	<p> -->
+	    	<!-- {{#each poll.tags}}
+	        <span>#{{this}}&#32</span>
+	        {{/each}} -->
+   <!--      </p> -->
+    </div>
+
+</div>

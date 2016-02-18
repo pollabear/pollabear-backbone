@@ -1,0 +1,59 @@
+<div class="poll">
+	<div class="poll-header">
+        <div class="poll-header-track"></div>
+        <h4 class="poll-header-text" align="center">
+            {{poll.text}}
+        </h4>
+    </div>
+
+	    <!--  -->
+	    <!--  -->
+
+<!-- 	<div ng-if="::mypolla.choiceType == 1" class="poll-body-photo">
+		<div ng-repeat="mychoice in ::mypolla.choices" 
+				class="photochoice" 
+				ng-click="::choiceSelected(mychoice._id, mypolla)"
+				ng-class="{'unanswered': !mypolla.answered}">
+			<div class="photochoice-body">
+                <img class="photochoice-body-img" ng-src="{{::mychoice.imgPath}}">
+
+
+	                <div class="photochoice-body-overlay" ng-if="mypolla.answered"></div>
+	                <div class="photochoice-body-percent-overlay"
+	                	ng-if="mypolla.answered"
+	                	ng-style="::{ 'height' : ((mychoice.votes / mypolla.votes) * 150) + '%' }" 	
+	            		ng-class="{'choice-overlay-visible': mypolla.answered}"></div>
+	                <h1 class="photochoice-body-percent-text choice-percent-text" ng-if="mypolla.answered">
+	                    ::(((mychoice.votes / mypolla.votes) * 100) | number:1 )<span class="photochoice-body-percent-symbol">%</span> 
+	                </h1>
+
+
+            </div>
+            <div class="photochoice-footer">
+
+                <h5 class="photochoice-footer-text">
+                    {{this.text}}
+                </h5>
+            </div>
+		</div>
+	</div>
+ -->
+	<!--  -->
+	<!--  -->
+
+	<div class="poll-footer-data">
+	    <h6 class="poll-footer-data-category">
+	        {{poll.category}}
+	    </h6>
+	    <h6 class="poll-footer-data-votes">
+	        {{poll.votes}} votes
+	    </h6>
+	</div>
+
+	<h6 class="poll-footer-more">
+		{{#each poll.tags}}
+	    <span>#{{this}}&#32</span>
+	    {{/each}}
+	</h6>
+
+</div>
