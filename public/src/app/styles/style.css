@@ -10,7 +10,6 @@ html, body {
 }
 
 body {
-	min-height: 1300px;
 
 	background: #f5f6f6;
 
@@ -19,7 +18,13 @@ body {
 	/*background-color: #29354B;*/
 	/*background-color: #eaedea;*/
 	/*background-color: #eff0f4;*/
+
     font-family: 'Avenir-Book', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif !important;
+    
+/*    font-family: "Comic Sans MS";
+    font-family: "Trebuchet MS";
+    font-family: Helvetica;
+    font-family: "Times New Roman", Times, serif;*/
 }
 
 #main {
@@ -30,94 +35,6 @@ body {
 	/*overflow: hidden;*/
 	/*box-sizing: border-box;*/
 }
-
-#home-container {
-	/*position: relative;*/
-	/*height: 100%;*/
-	/*width: 100%;*/
-}
-
-#grid-container {
-/*	position: absolute;
-	right: 0;
-	top: 0;
-	left: 220px;
-
-	margin-top: 75px;
-
-	min-height: 100px;*/
-	/*height: 100%;*/
-	/*width: 100%;*/
-/*	margin: 0 auto;
-	max-width: 1000px;*/
-}
-
-#sidebar {
-	position: fixed;
-	left: 0;
-	top: 0;
-	bottom: 0;
-	/*height: 100%;*/
-	width: 220px;
-	margin-top: 57px;
-	background-color: white;
-
-	border-right-width: 1px;
-	border-right-style: solid; 
-	border-right-color: #ebebeb; 
-	overflow: hidden;
-
-}
-
-.sidebar-pollabear {
-	height: 170px; 
-	width: 170px;
-	padding: 25px;
-	background-color: #f8fafa;
-}
-
-.sidebar-pollapoints {
-	height: 60px; 
-	width: 220px;
-	background-color: #f8fafa;
-	color: #484a4a;
-	text-align: center;
-
-/*	border-top-width: 1px;
-	border-top-style: solid; 
-	border-top-color: #ebebeb;*/ 
-	/*background-color: #f8fafa;*/
-}
-
-.user-pollabear {
-	width: 170px;
-	height: 170px;
-	-moz-border-radius: 100px;
-	-webkit-border-radius: 100px;
-	border-radius: 200px;
-}
-
-.sidebar-more {
-	display: none;
-	position: absolute;
-	top: 330px;
-	/*height: 100px;*/
-	bottom: 0;
-	width: 220px;
-	border-top-width: 1px;
-	border-top-style: solid; 
-	border-top-color: #ebebeb; 
-	overflow-x: hidden; 
-	overflow-y: scroll; 
-}
-
-.sidebar-more-element {
-	margin: 10px;
-	height: 50px;
-	width: 200px;
-	background-color: #f8fafa;
-}
-
 
 .noscroll {
 	overflow: hidden;
@@ -134,10 +51,10 @@ body {
 
 #overlay {
     position: fixed;
-    top: 100%;
+    top: 0;
     left: 0;
     right: 0;
-    /*bottom: 0;*/
+    bottom: 0;
     height: 100%;
 	width: 100%;
     z-index: 10000;
@@ -149,7 +66,8 @@ body {
 	opacity: 0;
 
 	background: rgba(245, 246, 246, 0.95);
-	background-color: #29354B;
+	background: rgba(50, 50, 50, 0.95);
+	/*background-color: #29354B;*/
 	/*background-color: white;*/
 }
 
@@ -203,25 +121,6 @@ body {
 	/*overflow: auto;*/
 }
 
-#infinite-container {
-	width: 500px;
-	float: left;
-	margin-right: 15px;
-	margin-left: 15px;
-	/*background-color: black;*/
-}
-
-#grid-container {
-	/*min-width: 775px;*/
-		/*overflow: auto;*/
-}
-
-#masonry-grid {
-	margin: 0 auto;
-	/*width: 100%;*/
-}
-
-
 .stamp-banner {
 	height: 150px;
 	width: 480px;
@@ -232,15 +131,6 @@ body {
 	padding: 20px;
 }
 
-
-.pollapoints-text {
-	font-size: 15px;
-}
-
-.pollapoints-number {
-	font-size: 40px;
-	letter-spacing: 10px;
-}
 
 
 

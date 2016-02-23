@@ -8,12 +8,12 @@ var path = require('path');
 
 var app = express();
 
-app.use(express.static(path.join(__dirname, 'public/dist')));
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.get('/data', function (req, res) {
   console.log(req.protocol + "://" + req.get('host') + req.originalUrl);
-    res.sendFile(path.join(__dirname, 'public', 'data.html'));
+    // res.sendFile(path.join(__dirname, 'public', 'data.html'));
 });
 
 app.get('/*', function (req, res) {

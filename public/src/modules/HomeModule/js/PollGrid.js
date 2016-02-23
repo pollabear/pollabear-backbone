@@ -20,8 +20,9 @@ var PB = PB || {};
 			this.options = options;
 			// this.$spinner = $spinner;
 
-			this.scrollTolerance = 200;
+			this.scrollTolerance = 600;
 
+			this.category = this.options.category || 'all';
 			this.paginationURL = this.options.paginationURL;
 
 			// this.polls = PB.API.getPolls();
@@ -29,7 +30,10 @@ var PB = PB || {};
 			this.loading = false;
 			this.$newPolls = [];
 
+			this.$spinner = $('#spinner');
+
 			this.polls = new PB.PollCollection();
+			PB.retrievedPolls = this.polls;
 
 			// On collection change - add new polls
 			this.listenTo(this.polls, 'add', this.addPoll);
@@ -45,7 +49,8 @@ var PB = PB || {};
 			});
 
 			var masonryOptions = {
-				columnWidth: 250,
+				// resizeable: true,
+				columnWidth: 300,
 				isFitWidth: true,
 				itemSelector: '.poll-wrapper',
 				hiddenStyle: { opacity: 0 },
@@ -106,6 +111,7 @@ var PB = PB || {};
 
 		getPolls : function(){
 		    this.loading = true;
+		    this.$spinner.show();
 			
 			// increment page
 			this.currentPage = this.currentPage + 1;
@@ -118,8 +124,14 @@ var PB = PB || {};
 			// get new polls from API
 			setTimeout(function() {
 				// add new polls to collection
-				self.polls.add(PB.API.getRandomPolls(20));
-				self.loading = false;
+				self.polls.add(PB.API.getRandomPolls(20, self.category));
+				
+				if (self.currentPage < 12) {
+					self.loading = false;
+				}
+
+				self.$spinner.hide();
+
 				console.log("Polls loaded");
 			}, 800);
 
@@ -133,8 +145,15 @@ var PB = PB || {};
 			$(e.currentTarget).toggleClass("choice-highlight");
 		},
 
-		destroy : function(){
-			this.$el.masonry('destroy'); 
+		destroy : function() {
+			var model;
+			while (model = this.polls.first()) {
+			  model.trigger('destroy', model, model.collection);
+			}
+
+			console.log(this.polls);
+
+			// this.$el.masonry('destroy'); 
 			$(window).off('scroll');
 			this.remove();
 		}

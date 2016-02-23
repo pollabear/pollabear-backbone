@@ -12,6 +12,10 @@ var PB = PB || {};
 
 		events: {
 			'click .unanswered .choice': 'answerPoll',
+			'click .poll-follow': 'followPoll',
+			'click .poll-like': 'likePoll',
+
+
 			'change .demographic-selector': 'changeData'
 		},
 
@@ -59,7 +63,9 @@ var PB = PB || {};
 
 			$(e.currentTarget).find('.textchoice-main-check').fadeTo('default',1);
 
-			// Should add a check
+			// update number of poll votes
+
+			// update number of choice votes
 
 			console.log($(e.currentTarget).data("choiceid"));
 

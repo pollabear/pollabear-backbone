@@ -21,19 +21,12 @@ var PB = PB || {};
 			this.$reasonings = this.$('.pollpage-section--reasonings');
 			this.$comments = this.$('.pollpage-section--comments');
 
-			if (this.model == null) {
-				var self = this;
-				// setTimeout(function() { 
-					self.model = new PB.Poll(PB.API.getFullPoll());
-				// }, 900);
-			}
+			console.log(this.model);
 
 			this.listenTo(this.model, 'change', this.render);
 
-
 			var pollView = new PB.PollView({ model: this.model });
 			this.$poll.html(pollView.el);
-			this.render();
 
 			// console.log(this.model);
 

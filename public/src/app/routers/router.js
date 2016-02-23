@@ -18,12 +18,13 @@ var PB = PB || {};
 
 		home: function () {
 			console.log("home");
-			PB.elements.transitionMain(PB.HomeView);
+			var homeView = new PB.HomeView({category: 'all'});
+			PB.elements.transitionMain(homeView);
 		},
 
 		categories: function () {
 			console.log("categories");
-			PB.elements.transitionMainOrOverlay(PB.CategoryView);
+			PB.elements.transitionMainOrOverlay(new PB.CategoryView());
 		},
 
 		category: function (categoryName) {
@@ -32,23 +33,47 @@ var PB = PB || {};
 			// Same as main but with extra option for category filter
 
 			// if we are on home state already, simply refresh with new category filter
+			// console.log(PB.elements.main.state);
+
+			// if (PB.elements.main.active && PB.elements.main.state)
+
+			var homeView = new PB.HomeView({category: categoryName});
+			PB.elements.transitionMain(homeView);
+
+
 		},
 
 		create: function () {
 			console.log("create");
 			// PB.elements.transitionMain(PB.CreateView);
-			PB.elements.transitionMainOrOverlay(PB.CreateView);
+			PB.elements.transitionMainOrOverlay(new PB.CreateView());
 		},
 
 		profile: function () {
 			console.log("profile");
-			PB.elements.transitionMain(PB.ProfileView);
+			PB.elements.transitionMain(new PB.ProfileView());
 		},
 
 		poll: function (pollID) {
 			console.log("poll/"+pollID);
 			// PB.PollView.prototype.url = "poll/"+pollID;
-			PB.elements.transitionMainOrOverlay(PB.PollDetail);
+
+			// PB.retrievedPolls.get(pollID)
+
+			var model;
+			if (PB.retrievedPolls) {
+				model = PB.retrievedPolls.get(pollID);
+				console.log(model);
+			} 
+
+			if (!model) {
+				setTimeout(function() { 
+					model = new PB.Poll(PB.API.getFullPoll());
+					PB.elements.transitionMainOrOverlay(new PB.PollDetail({ model: model }));
+				}, 900);
+			} else {
+				PB.elements.transitionMainOrOverlay(new PB.PollDetail({ model: model }));
+			}
 		}
 
 		// search: function (queryString) {

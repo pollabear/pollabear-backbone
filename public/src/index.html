@@ -19,7 +19,8 @@
 
     <!--(if target dist)><!-->
 
-    <link rel="stylesheet" href="/css/pollabear.min.css"> 
+    <link rel="stylesheet" type="text/css" href="/dist/css/pollabear.min.css"> 
+    <!-- <link rel="stylesheet" type="text/css" href="/libs/bootstrap/css/bootstrap.css"> -->
 
     <!--<!(endif)-->
 
@@ -43,11 +44,14 @@
         <li class="navbar-item"><a class="navbar-link" href="/">Pollabear</a></li>
 
         <li class="navbar-item">
-            <div class="search-container">
-            </div>
+            <!-- <div class="search-container"> -->
+                <!-- <input id="search-input" type="text" name="search" placeholder="Search"> -->
+            <!-- </div> -->
         </li>
         <ul class="navbar navbar-right-wrapper">
-            <li class="navbar-item"><a class="navbar-link" href="/categories">Category</a></li>
+            <li class="navbar-item">
+                <a class="navbar-link" href="/categories">Category</a>
+            </li>
             <li class="navbar-item"><a class="navbar-link" href="/create">Create</a></li>
             <li class="navbar-item"><a class="navbar-link" href="/profile">Profile</a></li>
         </ul>
@@ -72,8 +76,8 @@
     <!-- Handlebars Runtime -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.runtime.min.js"></script>
     <!-- Masonry Runtime -->
-    <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script> -->
+    <!-- <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
     <!-- ChartJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
 
@@ -82,7 +86,8 @@
 
     <!--(if target dist)><!-->
 
-    <script src="/js/pollabear.min.js"></script>
+    <script src="/dist/js/pollabear.min.js"></script>
+    <!-- <script src="/libs/bootstrap/js/bootstrap.min.js"></script> -->
 
     <!--<!(endif)-->
 

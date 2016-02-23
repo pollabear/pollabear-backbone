@@ -1,6 +1,9 @@
 <div class="poll unanswered category-{{poll.category}}--border">
 	<div class="poll-header">
         <!-- <div class="poll-header-track"></div> -->
+        <!--  -->
+        <!-- <img class="poll-header-img" src="http://sites.psu.edu/edkawong/wp-content/uploads/sites/15056/2015/03/Tm70k2m.jpg"> -->
+
         <div class="poll-header-text">
         <a href="/poll/{{poll.id}}">
             {{poll.text}}
@@ -17,7 +20,7 @@
 	        <div class="textchoice-overlay category-{{../poll.category}}--overlay"></div>
 	        <div class="textchoice-main">
 	            <div class="textchoice-main-check">
-	                <i class="material-icons">done</i>
+	                <i class="material-icons icon-check">done</i>
 	            </div>
 	            <div class="textchoice-main-text">
 	                {{this.text}}
@@ -34,15 +37,46 @@
 	<!--  -->
 
 	<div class="poll-footer-data">
-        <span class="poll-footer-data-category">{{poll.category}}</span>
+        <a class="poll-footer-data-category" href="/category/{{poll.category}}">
+            {{ upperCase poll.category }}
+        </a>
         <span class="poll-footer-data-votes">{{poll.votes}} votes</span>
     </div>
 
-    <div class="poll-footer-more">
-    	<i class="material-icons md-36 icon-more icon-lightgrey">poll</i>
+    <div class="poll-footer-actions">
+
+        <span class="poll-footer-actions-track">
+            <i class="material-icons md-24 icon-actions icon-lightgrey">favorite</i>
+            <span class="poll-footer-actions-track-number">{{poll.trackCount}}</span>
+        </span>
+
+
+        <span class="poll-footer-actions-comments">
+            <i class="material-icons md-24 icon-actions icon-lightgrey">comment</i>
+            <span class="poll-footer-actions-comments-number">{{poll.commentCount}}</span>
+        </span>
+
+        <span class="poll-footer-actions-more">
+            <i class="material-icons md-36 icon-actions icon-lightgrey">more_horiz</i>
+        </span>
+
+
+        <!-- <div class="dropup icon-more">
+            <i class="material-icons md-36 icon-more icon-lightgrey" data-toggle="dropdown">poll</i>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li><a href="#">Separated link</a></li>
+            </ul>
+        </div> -->
+
+<!--     	<i class="material-icons md-36 icon-more icon-lightgrey">poll</i>
     	<i class="material-icons md-36 icon-more icon-lightgrey">people</i>
     	<i class="material-icons md-36 icon-more icon-lightgrey">comment</i>
-    	<i class="material-icons md-36 icon-more icon-lightgrey">favorite</i>
+    	<i class="material-icons md-36 icon-more icon-lightgrey">favorite</i> -->
+
     <!-- 	<p> -->
 	    	<!-- {{#each poll.tags}}
 	        <span>#{{this}}&#32</span>

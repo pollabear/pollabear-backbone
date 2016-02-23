@@ -208,19 +208,28 @@ var PB = PB || {};
 		}
 	};
 
-	API_DEV.getRandomPolls = function (pollNum) {
+	API_DEV.getRandomPolls = function (pollNum, c) {
 		var polls = [];
+		var category;
 
 		for (var i = 0; i < pollNum; i++) {
 
 			// Math.floor(Math.random()*(max-min+1)+min)
+
+			if (c != 'all') {
+				category = c;
+			} else {
+				category = this.categories[Math.floor(Math.random()*(this.categories.length))];
+			}
 
 			var poll = {
 				id: Math.floor(Math.random()*(10000)),
 		  		isAnswered: Boolean(Math.floor(Math.random() * 2)),
 		  		text: this.pollTexts[Math.floor(Math.random()*(this.pollTexts.length))],
 		  		votes: Math.floor(Math.random()*(10000)),
-		  		category: this.categories[Math.floor(Math.random()*(this.categories.length))],
+		  		trackCount: Math.floor(Math.random()*(300)),
+		  		commentCount: Math.floor(Math.random()*(300)),
+		  		category: category,
 		  		choices: []
 		    	// tags: ["tag1","tag2"]
 		  	};
@@ -280,27 +289,30 @@ var PB = PB || {};
 	};
 
 	API_DEV.categories = [
-		"Social",
-		"Politics",
-		"Funny",
-		"Sports",
-		"Food",
-		"Games",
-		"Music",
-		"Travel"
+		"social",
+		"politics",
+		"funny",
+		"sports",
+		"food",
+		"games",
+		"music",
+		"travel"
 	];
 
 	API_DEV.pollTexts = [
 		"Some poll text",
-		// "This is a much longer question than usual, but still quite important!?l, but still quite important!?"
+		"More short poll text?",
+		"This is a much longer question than usual, but still quite important!?"
 	];
 
 	API_DEV.choiceTexts = [
 		// "Some longer choice text might go righhhhhht here. This is huge!Some longer choic", //e text might go righhhhhht here. This is huge!",
 		// "Some longer choice text might go righhhhhht here. This is huge!",
 		"Choice text",
-		"Something else here! should take 2 lines"
-	]
+		"A quite small choice",
+		"Something else here! should take 2 lines",
+		"Something else here! should take 3 lines now that I am getting big"
+	];
 
 
 	PB.API = API_DEV;

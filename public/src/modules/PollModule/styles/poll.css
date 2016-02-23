@@ -5,7 +5,7 @@
 
 
 .poll-wrapper {
-	width: 250px;
+	width: 300px;
 	margin: 0;
 	margin-bottom: 20px;
 
@@ -20,7 +20,7 @@
 }
 
 .poll {
-	width: 250px;
+	width: 100%;
 	background-color: white;
 	/*background-color: #f5f6f6;*/
 
@@ -36,9 +36,9 @@
 	/*line-height: 18px;*/
 	font-weight: normal;
 
-	-moz-border-radius: 1px;
+/*	-moz-border-radius: 1px;
 	-webkit-border-radius: 1px;
-	border-radius: 6px;
+	border-radius: 6px;*/
 
 	-moz-box-shadow: 0 2px 3px rgba(0,0,0,0.12);
     -webkit-box-shadow: 0 2px 3px rgba(0,0,0,0.12);
@@ -53,10 +53,8 @@
 	.poll-header {
 		/*overflow: hidden;*/
 		/*width: 100%;*/
-		cursor: pointer;
-		padding: 15px;
-		padding-left: 10px;
-		padding-right: 10px;
+		padding: 12px;
+
 	}
 
 
@@ -66,6 +64,8 @@
 			width: 100%;
 			/*height: 100px;*/
     		height: auto;
+
+    		min-height: 200px;
     		max-height: 700px;
     		overflow: hidden;
 
@@ -74,7 +74,7 @@
 			-webkit-border-radius: 8px 8px 0px 0px;
 			border-radius: 8px 8px 0px 0px;*/
 
-			opacity: .8;
+			/*opacity: .8;*/
 		}
 
 		div.poll-header:hover > img.poll-header-img {
@@ -115,9 +115,14 @@
 
 		}
 
-		.poll-header-text > a {
+		.poll-header-text > a:hover {
+			color: lightblue;
+		}
+
+		a {
 			 text-decoration: none !important;
 			 color: inherit;
+			 cursor: pointer;
 		}
 
 		.poll-expanded > .poll-header > .poll-header-text {
@@ -157,12 +162,12 @@
 
 		/* for text only */
 		.textchoice {
-			min-height: 50px;
+			min-height: 40px;
 			position: relative;
-			margin-left: 15px;
-			margin-right: 15px;
+			margin-left: 12px;
+			margin-right: 12px;
 			/*margin-top: 10px;*/
-			margin-bottom: 10px;
+			margin-bottom: 7px;
 
 			/*-moz-border-radius: 5px;
 			-webkit-border-radius: 5px;
@@ -213,22 +218,26 @@
 
 				.textchoice-main-check {
 					float: left;
-					width: 30px;
+					width: 13%;
 					text-align: center;
-					padding-top: 10px;
-			    	padding-bottom: 10px;
+					padding-top: 5px;
+			    	padding-bottom: 5px;
 			    	opacity: 0;
 
 				}
+
+					.icon-check {
+						line-height: 24px;
+					}
 
 				.textchoice-main-text {
 					float: left;
 					/* take up remaining space */
 					/* use span tag ???? */
-					width: 160px;
+					width: 75%;
 					text-align: center;
-					padding-top: 10px;
-			    	padding-bottom: 10px;
+					padding-top: 5px;
+			    	padding-bottom: 5px;
 
 				}
 
@@ -239,10 +248,10 @@
 
 				.choice-percent-text {
 					float: left;
-					width: 40px;
+					width: 13%;
 					text-align: center;
-					padding-top: 10px;
-			    	padding-bottom: 10px;
+					padding-top: 5px;
+			    	padding-bottom: 5px;
 			    	opacity: 0;
 
 			    	color:#414141;
@@ -264,11 +273,9 @@
 	- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - */
 
 	.poll-footer-data {
-		width: 220px;
+		width: 100%;
 		overflow: hidden;
-		margin-left: 15px;
-		margin-right: 15px;
-		margin-top: 7px;
+		margin-top: 10px;
 		margin-bottom: 7px;
 		font-size: 12px;
 
@@ -277,41 +284,80 @@
 
 		.poll-footer-data-category {
 			float: left;
+			margin-left: 12px;
 			/*color: #999;*/
+		}
+
+		.poll-footer-data-category:hover {
+			color: lightblue;
 		}
 
 		.poll-footer-data-votes {
 			float: right;
+			margin-right: 12px;
 			/*color: #999;*/
 		}
 
-	.poll-footer-more {
-		/*background-color: #f8fafa;*/
 
-		/*background-color: #FF5252;*/
+	.poll-footer-actions {
+		box-sizing: border-box;
 		text-align: center;
+
 		border-top-width: 1px;
 		border-top-style: solid; 
 		border-top-color: #ebebeb; 
+
 		width: 100%;
-		height: 28px;
+		/*height: 28px;*/
 
 		/*font-size: 12px;*/
 
 		color:#a1a1a1;
 
-/*		-moz-border-bottom-right-radius: 1px;
-		-webkit-border-bottom-right-radius: 1px;
-		border-bottom-right-radius: 1px;
+		/*padding-bottom: 10px;*/
 
-		-moz-border-bottom-left-radius: 1px;
-		-webkit-border-bottom-left-radius: 1px;
-		border-bottom-left-radius: 1px;*/
+		padding-top: 3px;
 
-		padding-bottom: 8px;
-		padding-top: 10px;
+		height: 40px;
+  		/*line-height: 40px;*/
+  		white-space: nowrap;
+
+		overflow: hidden;
+
+		/*height: 40px;*/
+
+
 		
 	}
+
+		.poll-footer-actions-track {
+			cursor: pointer;
+			float: left;
+			margin-left: 15px;
+
+		}
+
+			.poll-footer-actions-track-number {
+				font-size: 10px;
+				/*line-height: 30px;*/
+			}
+
+		.poll-footer-actions-comments {
+			cursor: pointer;
+			/*float: left;*/
+			/*margin-left: 5px;*/
+		}
+
+			.poll-footer-actions-comments-number {
+				font-size: 10px;
+				/*line-height: 30px;*/
+			}
+
+		.poll-footer-actions-more {
+			cursor: pointer;
+			float: right;
+			margin-right: 15px;
+		}
 
 
 /*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -

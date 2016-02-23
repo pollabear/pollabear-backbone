@@ -1,0 +1,62 @@
+<div>
+	
+	<!-- Display container -->
+	<div>
+		
+		<!-- Relative Container for img layering -->
+		<div>
+			
+			<!-- Baseline pollabear to layer pollabear items on -->
+			<img>
+
+
+
+		</div>
+
+	</div>
+
+
+	<!-- Sections for accesory types -->
+	<div>
+		<!-- Hats -->
+		<div>
+			
+		</div>
+
+		<!-- Eyeware -->
+		<div>
+			
+		</div>
+
+		<!-- Facial Hair -->
+		<div>
+			
+		</div>
+
+		<!-- MORE! -->
+	</div>
+
+</div>
+
+
+<!-- 
+		General Logic
+
+	- only one accesory of a given type can be selected at a time
+
+	- accessory types have a z-order specification to ensure proper layering
+
+	- if an accessory is selected, enable the save button
+
+	- server needs to put together image after user saves updates to customized bear by layering the images on the server-side
+		- server gathers all imgs necessary, orders everything by priority, layers and saves final img to s3, then updates s3 file location in user record
+
+	- accessory {
+		owned: bool,
+		selected: bool,
+		priority: num  // corresponds to expected z-index
+	}
+
+
+
+ -->

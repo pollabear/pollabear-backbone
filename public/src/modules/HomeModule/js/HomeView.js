@@ -9,7 +9,8 @@ var PB = PB || {};
 		// template: JST["public/js/templates/home.hbs"](),
 		// id: 'home-container',
 
-		initialize: function () {
+		initialize: function (options) {
+			this.options = options;
 
 			this.$el.html(JST["public/src/modules/HomeModule/templates/home.hbs"]());
 
@@ -21,10 +22,14 @@ var PB = PB || {};
 
 		render: function () {
 			if (!this.$pollGrid) {
-				this.$pollGrid = new PB.PollGrid({el: this.$('#masonry-grid')});
+				this.$pollGrid = new PB.PollGrid({el: this.$('#masonry-grid'), category : this.options.category});
 				this.$pollGrid.render();
 			}
 		},
+
+		// changeCategory: function () {
+		// 	this.$pollGrid
+		// },
 
 		destroy: function () {
 			this.$pollGrid.destroy();

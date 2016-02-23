@@ -1,0 +1,35 @@
+#grid-container {
+	/*min-width: 775px;*/
+		/*overflow: auto;*/
+}
+
+#masonry-grid {
+	margin: 0 auto;
+	/*width: 100%;*/
+	/*min-height: 100px;*/
+}
+
+#grid-footer {
+
+	/*height: 200px;*/
+	width: 100%;
+	/*border-top: 2px solid #e5e6e6;*/
+	position: relative;
+
+}
+
+#spinner {
+	display: block;
+	margin: 20px auto;
+	width: 30px;
+	height: 30px;
+}
+
+.spinner-center {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
