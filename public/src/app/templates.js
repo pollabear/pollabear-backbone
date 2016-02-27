@@ -75,7 +75,7 @@ this["JST"]["public/src/modules/PollModule/templates/text_poll.hbs"] = Handlebar
     + alias2(alias1((depth0 != null ? depth0.id : depth0), depth0))
     + "\">\n	        <div class=\"textchoice-overlay category-"
     + alias2(alias1(((stack1 = (depths[1] != null ? depths[1].poll : depths[1])) != null ? stack1.category : stack1), depth0))
-    + "--overlay\"></div>\n	        <div class=\"textchoice-main\">\n	            <div class=\"textchoice-main-check\">\n	                <i class=\"material-icons icon-check\">done</i>\n	            </div>\n	            <div class=\"textchoice-main-text\">\n	                "
+    + "--background\"></div>\n	        <div class=\"textchoice-main\">\n	            <div class=\"textchoice-main-check\">\n	                <i class=\"material-icons icon-check\">done</i>\n	            </div>\n	            <div class=\"textchoice-main-text\">\n	                "
     + alias2(alias1((depth0 != null ? depth0.text : depth0), depth0))
     + "\n	            </div>\n	            <div class=\"choice-percent-text\"> \n\n	            </div>\n	        </div>\n		</div>\n";
 },"3":function(container,depth0,helpers,partials,data) {
@@ -85,9 +85,9 @@ this["JST"]["public/src/modules/PollModule/templates/text_poll.hbs"] = Handlebar
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data,blockParams,depths) {
     var stack1, alias1=container.lambda, alias2=container.escapeExpression, alias3=depth0 != null ? depth0 : {};
 
-  return "<div class=\"poll unanswered category-"
+  return "<div class=\"poll unanswered\">  <!-- category-"
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.poll : depth0)) != null ? stack1.category : stack1), depth0))
-    + "--border\">\n	<div class=\"poll-header\">\n        <!-- <div class=\"poll-header-track\"></div> -->\n        <!--  -->\n        <!-- <img class=\"poll-header-img\" src=\"http://sites.psu.edu/edkawong/wp-content/uploads/sites/15056/2015/03/Tm70k2m.jpg\"> -->\n\n        <div class=\"poll-header-text\">\n        <a href=\"/poll/"
+    + "--shadow\"> -->\n	<div class=\"poll-header\">\n        <!-- <div class=\"poll-header-track\"></div> -->\n        <!--  -->\n        <!-- <img class=\"poll-header-img\" src=\"http://sites.psu.edu/edkawong/wp-content/uploads/sites/15056/2015/03/Tm70k2m.jpg\"> -->\n\n        <div class=\"poll-header-text\">\n        <a href=\"/poll/"
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.poll : depth0)) != null ? stack1.id : stack1), depth0))
     + "\">\n            "
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.poll : depth0)) != null ? stack1.text : stack1), depth0))

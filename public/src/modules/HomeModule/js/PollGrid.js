@@ -6,8 +6,8 @@ var PB = PB || {};
 	PB.PollGrid = Backbone.View.extend({
 
 		events: {
-			'mouseenter .unanswered .choice' : 'toggleChoiceHighlight',
-			'mouseleave .unanswered .choice' : 'toggleChoiceHighlight',
+			// 'mouseenter .unanswered .choice' : 'toggleChoiceHighlight',
+			// 'mouseleave .unanswered .choice' : 'toggleChoiceHighlight',
 			// 'mouseenter .poll .poll-footer-more .icon-more' : 'toggleIconBrightness',
 			// 'mouseleave .poll .poll-footer-more .icon-more' : 'toggleIconBrightness'
 		},
@@ -17,6 +17,8 @@ var PB = PB || {};
 		// el: $('<div class="poll-wrapper></div>'),
 
 		initialize: function (options) {
+			console.log("Creating PollGrid");
+
 			this.options = options;
 			// this.$spinner = $spinner;
 
@@ -50,10 +52,11 @@ var PB = PB || {};
 
 			var masonryOptions = {
 				// resizeable: true,
-				columnWidth: 300,
+				columnWidth: 275,
 				isFitWidth: true,
 				itemSelector: '.poll-wrapper',
-				hiddenStyle: { opacity: 0 },
+				transitionDuration: 0,
+				// hiddenStyle: { opacity: 0 },
 				// stamp: '.stamp-banner',
 				gutter: 20
 				// containerStyle: null
@@ -73,9 +76,11 @@ var PB = PB || {};
 		},
 		
 		addPoll : function(poll) {
-			console.log('activated');
+			// console.log('activated');
 			var pollView = new PB.PollView({model: poll, isGridPoll: true});
 			this.$newPolls.push(pollView.$el);
+
+
 
 			// var newPollViews = [];
 			// for (var i = newPolls.length - 1; i >= 0; i--) {
@@ -89,7 +94,7 @@ var PB = PB || {};
 		},
 
 		newPolls : function() {
-			console.log(this.$newPolls);
+			// console.log(this.$newPolls);
 
 			// var $items = $(newPollViews.join(''));
 
@@ -100,6 +105,10 @@ var PB = PB || {};
 				this.$el
 					.append(this.$newPolls[i])
 					.masonry( 'appended', this.$newPolls[i] );
+
+				this.$newPolls[i].css({ 'height': this.$newPolls[i].height() });
+
+				this.$newPolls[i].velocity("fadeIn", { duration: 300 });
 			};
 
 			// this.$el
@@ -124,16 +133,16 @@ var PB = PB || {};
 			// get new polls from API
 			setTimeout(function() {
 				// add new polls to collection
-				self.polls.add(PB.API.getRandomPolls(20, self.category));
+				self.polls.add(PB.API.getRandomPolls(40, self.category));
 				
-				if (self.currentPage < 12) {
+				if (self.currentPage < 20) {
 					self.loading = false;
 				}
 
 				self.$spinner.hide();
 
 				console.log("Polls loaded");
-			}, 800);
+			}, 400);
 
 		},
 
@@ -141,17 +150,19 @@ var PB = PB || {};
 			$(e.currentTarget).toggleClass('icon-darkgrey');
 		},
 
-		toggleChoiceHighlight : function (e) {
-			$(e.currentTarget).toggleClass("choice-highlight");
-		},
+		// toggleChoiceHighlight : function (e) {
+		// 	$(e.currentTarget).toggleClass("choice-highlight");
+		// },
 
 		destroy : function() {
+			console.log("Destroying PollGrid");
+
 			var model;
 			while (model = this.polls.first()) {
 			  model.trigger('destroy', model, model.collection);
 			}
 
-			console.log(this.polls);
+			// console.log(this.polls);
 
 			// this.$el.masonry('destroy'); 
 			$(window).off('scroll');

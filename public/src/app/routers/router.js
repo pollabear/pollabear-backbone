@@ -18,13 +18,12 @@ var PB = PB || {};
 
 		home: function () {
 			console.log("home");
-			var homeView = new PB.HomeView({category: 'all'});
-			PB.elements.transitionMain(homeView);
+			PB.elements.transitionMain(PB.HomeView,{category: 'all'});
 		},
 
 		categories: function () {
 			console.log("categories");
-			PB.elements.transitionMainOrOverlay(new PB.CategoryView());
+			PB.elements.transitionMainOrOverlay(PB.CategoryView, {});
 		},
 
 		category: function (categoryName) {
@@ -37,21 +36,19 @@ var PB = PB || {};
 
 			// if (PB.elements.main.active && PB.elements.main.state)
 
-			var homeView = new PB.HomeView({category: categoryName});
-			PB.elements.transitionMain(homeView);
-
+			PB.elements.transitionMain(PB.HomeView,{category: categoryName});
 
 		},
 
 		create: function () {
 			console.log("create");
 			// PB.elements.transitionMain(PB.CreateView);
-			PB.elements.transitionMainOrOverlay(new PB.CreateView());
+			PB.elements.transitionMainOrOverlay(PB.CreateView, {});
 		},
 
 		profile: function () {
 			console.log("profile");
-			PB.elements.transitionMain(new PB.ProfileView());
+			PB.elements.transitionMain(PB.ProfileView, {});
 		},
 
 		poll: function (pollID) {
@@ -59,21 +56,9 @@ var PB = PB || {};
 			// PB.PollView.prototype.url = "poll/"+pollID;
 
 			// PB.retrievedPolls.get(pollID)
+	
+			PB.elements.transitionMainOrOverlay(PB.PollDetail, {pollID: pollID});
 
-			var model;
-			if (PB.retrievedPolls) {
-				model = PB.retrievedPolls.get(pollID);
-				console.log(model);
-			} 
-
-			if (!model) {
-				setTimeout(function() { 
-					model = new PB.Poll(PB.API.getFullPoll());
-					PB.elements.transitionMainOrOverlay(new PB.PollDetail({ model: model }));
-				}, 900);
-			} else {
-				PB.elements.transitionMainOrOverlay(new PB.PollDetail({ model: model }));
-			}
 		}
 
 		// search: function (queryString) {

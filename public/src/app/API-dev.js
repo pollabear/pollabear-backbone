@@ -240,7 +240,7 @@ var PB = PB || {};
 		  	var choiceCount = Math.floor(Math.random()*5+2);
 
 		  	// console.log(choiceCount);
-		  	console.log("POLL: " + poll.id);
+		  	// console.log("POLL: " + poll.id);
 
 		  	var choiceAnswered = false;
 
@@ -276,7 +276,7 @@ var PB = PB || {};
 		 			votes: choiceVotes
 		 		}
 
-		 		console.log(poll.isAnswered, choice.isAnswered);
+		 		// console.log(poll.isAnswered, choice.isAnswered);
 
 		 		poll.choices.push(choice);
 

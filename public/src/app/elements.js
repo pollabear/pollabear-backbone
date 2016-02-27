@@ -21,7 +21,7 @@ var PB = PB || {};
 		}
 	};
 
-    elements.activateOverlay = function (view) {
+    elements.activateOverlay = function (view, options) {
     	console.log('activateOverlay');
 
         // make body unscrollable
@@ -29,21 +29,45 @@ var PB = PB || {};
         // make overlay visible with animation
         this.overlay.$el.removeClass('hidden');
         
-        this.overlay.active = true;
+        var self = this
 
-        this.overlay.view = view;
-		this.overlay.$content.html(this.overlay.view.$el);
-		this.overlay.view.render();
+        setTimeout(function() {
 
-        // ADD ANIMATION
-        this.overlay.$el.animate({'opacity' : 1, 'padding':'0'}, 150);
+	    	self.overlay.active = true;
+
+	        self.overlay.view = new view(options);
+			self.overlay.$content.html(self.overlay.view.$el);
+			self.overlay.view.render();
+
+	        // ADD ANIMATION
+	        self.overlay.$el.velocity({opacity : 1}, 180);
+
+
+
+
+
+        }, 100);
+
+  //       this.overlay.active = true;
+
+  //       this.overlay.view = new view(options);
+		// this.overlay.$content.html(this.overlay.view.$el);
+		// this.overlay.view.render();
+
+  //       // ADD ANIMATION
+  //       this.overlay.$el.velocity({opacity : 1}, 200);
+
+
+
+
+
     };
 
 
     elements.deactivateOverlay = function () {
     	var self = this;
 
-		this.overlay.$el.animate({'opacity' : 0}, 150, function () {
+		this.overlay.$el.velocity({opacity : 0, padding: 0}, 200, function () {
 			self.overlay.$el.addClass('hidden');
 			$('body').removeClass('noscroll');
 			self.overlay.active = false;
@@ -51,7 +75,7 @@ var PB = PB || {};
 		});
     };
 
-    elements.transitionMain = function (view) {
+    elements.transitionMain = function (view, options) {
 
 		if (this.overlay.active) {
 			this.deactivateOverlay();
@@ -63,7 +87,7 @@ var PB = PB || {};
 				this.main.view.destroy();
 			}
 			// create a home view to put in the main container
-			this.main.view = view;
+			this.main.view = new view(options);
 			this.main.$el.html(this.main.view.$el);
 			this.main.view.render();
 
@@ -75,15 +99,15 @@ var PB = PB || {};
 
 	};	
 
-	elements.transitionMainOrOverlay = function (view) {
+	elements.transitionMainOrOverlay = function (view, options) {
 		if (!this.main.active) {
-			this.transitionMain(view);
+			this.transitionMain(view, options);
 
 			// add active class to navbar category tab
 
 		} else {
 			if (this.main.state != Backbone.history.getFragment()) {
-				this.activateOverlay(view);
+				this.activateOverlay(view, options);
 			} else {
 				this.deactivateOverlay();
 			}

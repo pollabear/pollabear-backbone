@@ -12,7 +12,7 @@ var PB = PB || {};
 
 		events: {},
 
-		initialize: function () {
+		initialize: function (options) {
 			this.$el.html(JST["public/src/modules/PollDetailModule/templates/pollpage.hbs"]());
 
 			this.$bear = this.$('.pollpage-bear');
@@ -21,29 +21,54 @@ var PB = PB || {};
 			this.$reasonings = this.$('.pollpage-section--reasonings');
 			this.$comments = this.$('.pollpage-section--comments');
 
-			console.log(this.model);
+			this.pollID = options.pollID;
 
-			this.listenTo(this.model, 'change', this.render);
 
-			var pollView = new PB.PollView({ model: this.model });
-			this.$poll.html(pollView.el);
+			if (PB.retrievedPolls) {
+				this.model = PB.retrievedPolls.get(this.pollID);
+			} 
+
+			if (!this.model) {
+
+				var self = this;
+
+				setTimeout(function() { 
+					self.model = new PB.Poll(PB.API.getRandomPolls(1,'all')[0]);
+
+					self.listenTo(self.model, 'change', self.render);
+					self.pollView = new PB.PollView({ model: self.model });
+					self.$poll.html(self.pollView.el);
+
+					// console.log(self.model);
+
+				}, 900);
+			} else {
+				this.listenTo(this.model, 'change', this.render);
+				this.pollView = new PB.PollView({ model: this.model });
+				this.$poll.html(this.pollView.el);
+
+				// console.log(this.model);
+			}
 
 			// console.log(this.model);
 
 		},
 
 		render: function () {
-			if (!this.model.get('unanswered')) {
-				// this.activateChart();
+			// if (!this.model.get('unanswered')) {
+			// 	// this.activateChart();
 
 
 
 
 
-			}
+			// }
 		},
 
 		destroy: function () {
+			console.log('destroying PollDetail');
+			// this.model.trigger('destroy', this.model, this.model.collection);
+			this.pollView.remove();
 			this.remove();
 
 

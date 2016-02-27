@@ -1,4 +1,4 @@
-<div class="poll unanswered category-{{poll.category}}--border">
+<div class="poll unanswered">  <!-- category-{{poll.category}}--shadow"> -->
 	<div class="poll-header">
         <!-- <div class="poll-header-track"></div> -->
         <!--  -->
@@ -17,7 +17,7 @@
     <div class="poll-body">
     {{#each poll.choices}}
 		<div class="choice textchoice" data-choiceid="{{this.id}}">
-	        <div class="textchoice-overlay category-{{../poll.category}}--overlay"></div>
+	        <div class="textchoice-overlay category-{{../poll.category}}--background"></div>
 	        <div class="textchoice-main">
 	            <div class="textchoice-main-check">
 	                <i class="material-icons icon-check">done</i>

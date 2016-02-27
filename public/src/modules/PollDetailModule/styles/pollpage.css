@@ -5,7 +5,7 @@
 	/*margin: 30px;*/
 	/*background-color: blue;*/
 	margin-bottom: 30px;
-	background-color: #f8fafa;
+	/*background-color: #f8fafa;*/
 
 }
 
@@ -34,4 +34,9 @@
 	bottom:0;
 	left:0;
 
+}
+
+.pollpage-section--poll {
+	margin: 0 auto;
+	
 }

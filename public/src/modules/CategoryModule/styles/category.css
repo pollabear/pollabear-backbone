@@ -30,36 +30,75 @@
 
 
 
-.category-social--overlay {
+.category-social--background {
 	 background-color: #FF8A80;
 }
+.category-social--shadow {
+	box-shadow: 0px 0px 10px 0px #FF8A80;
+}
 
-.category-politics--overlay {
+/*******/
+
+.category-politics--background {
 	 background-color: #F48FB1;
 }
+.category-politics--shadow {
+	box-shadow: 0px 0px 10px 0px #F48FB1;
+}
 
-.category-funny--overlay {
+/*******/
+
+.category-funny--background {
 	 background-color: #CE93D8;
 }
+.category-funny--shadow {
+	box-shadow: 0px 0px 10px 0px #CE93D8;
+}
 
-.category-sports--overlay {
+/*******/
+
+.category-sports--background {
 	 background-color: #B39DDB;
 }
+.category-sports--shadow {
+	box-shadow: 0px 0px 10px 0px #B39DDB;
+}
 
+/*******/
 
-.category-food--overlay {
+.category-food--background {
 	 background-color: #8C9EFF;
 }
+.category-food--shadow {
+	box-shadow: 0px 0px 10px 0px #8C9EFF;
+}
 
-.category-games--overlay {
+/*******/
+
+.category-games--background {
 	 background-color: #80D8FF;
 }
+.category-games--shadow {
+	box-shadow: 0px 0px 10px 0px #80D8FF;
+}
 
-.category-music--overlay {
+/*******/
+
+.category-music--background {
 	 background-color: #69F0AE;
 }
+.category-music--shadow {
+	box-shadow: 0px 0px 10px 0px #69F0AE;
+}
 
-.category-travel--overlay {
+/*******/
+
+.category-travel--background {
 	 background-color: #A7FFEB;
 }
+.category-travel--shadow {
+	box-shadow: 0px 0px 10px 0px #A7FFEB;
+}
+
+/*******/
 
