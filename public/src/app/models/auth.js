@@ -5,16 +5,39 @@ var PB = PB || {};
 
 // attempt to retrieve authentication from data sources
 
-    PB.Poll = Backbone.Model.extend({
-        
+    // PB.Auth = Backbone.Model.extend({
+    //     facebookLogin: function () {
+    //         axios.get('https://www.facebook.com/v2.8/dialog/oauth', {
+    //             params: {
+    //               client_id: '1750824855143201',
+    //               redirect_uri: window.location.origin + '/'
+    //             }
+    //           })
+    //           .then(function (response) {
+    //             console.log(response);
+    //           })
+    //           .catch(function (error) {
+    //             console.log(error);
+    //           });
+    //     }
+    // });
 
-
-        
-
-    });
-
-
-
+    PB.Auth = {
+        facebookLogin: function () {
+            axios.get('https://www.facebook.com/v2.8/dialog/oauth', {
+                params: {
+                  client_id: '1750824855143201',
+                  redirect_uri: window.location.origin + '/'
+                }
+              })
+              .then(function (response) {
+                console.log(response);
+              })
+              .catch(function (error) {
+                console.log(error);
+              });
+        }
+    };
 
 })();
 
