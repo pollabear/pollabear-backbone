@@ -1,17 +1,19 @@
 .navbar {
     list-style-type: none;
     overflow: ;
-    background-color: white;
-    /*background-color: #29354B;*/
-    height: 55px;
+    /*background-color: white;*/
+    background-color: #091a4e;
+    
+    /*background-color: #8C9EFF;*/
+    height: 50px;
     z-index: 1000;
 
-    border-bottom: 1px solid #ECECEC;
+    /*border-bottom: 1px solid #ECECEC;*/
 
 
-    -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.12);
+/*    -moz-box-shadow: 0 1px 1px rgba(0,0,0,0.12);
     -webkit-box-shadow: 0 1px 1px rgba(0,0,0,0.12);
-    box-shadow: 0 1px 1px rgba(0,0,0,0.12);
+    box-shadow: 0 1px 1px rgba(0,0,0,0.12);*/
 }
 
 .navbar-fixed {
@@ -33,19 +35,20 @@
 
 .navbar-link {
     display: block;
-    color: lightblue;
+    color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 .navbar-item a.navbar-link:hover:not(.active) {
-    /*background-color: lightblue;*/
-    color: darkblue;
+    background-color: white;
+    color: #091a4e;
+    transition: 0.3s;
 }
 
 .active {
-    background-color: #4CAF50;
+    /*background-color: #4CAF50;*/
 }
 
 .search-container {

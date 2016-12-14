@@ -4,19 +4,23 @@ $(function () {
     'use strict';
 
     PB.router = new PB.PollabearRouter();
-    // PB.retrievedPolls = null;
+  
+    PB.removeDropdowns = function () {
+        $('.dropdown-content[data-active="true"]').attr('data-active', "false").velocity({
+            /* Two-item array format. */
+            translateY: [-30, 0],
+            /* Three-item array format with a per-property easing. */
+            opacity: [ 0, 1 ]
+        }, 
+        {
+            complete: function (elements) {
+              $(this).removeClass('dropdown-content-display');
+            },
+            duration: 200
+        });
+    }
 
-
-  // $(document).on('show.bs.dropdown', '.dropup', function(e){
-  //   $(this).find('.dropdown-menu').first().stop(true, true).show(200);
-  // });
-
-  // // ADD SLIDEUP ANIMATION TO DROPDOWN //
-  // $(document).on('hide.bs.dropdown', '.dropup', function(e){
-  //   $(this).find('.dropdown-menu').first().stop(true, true).hide(200);
-  // });
-
-  // $('[data-toggle="tooltip"]').tooltip();
+    $(document).click(PB.removeDropdowns);
 
     // clicking on overlay OR on X button in overlay should bring focus back to main container
     // $(document).on("click", "#overlay, #exitoverlay", 
@@ -27,7 +31,6 @@ $(function () {
         // console.log(e.target);
         // console.log(e.currentTarget);
 
-        // window.history.back();
         if (e.target == e.currentTarget || 
             e.target == $('#overlay-content').get(0) || 
             e.target == $('#overlay-exit').get(0) ) {
@@ -42,7 +45,6 @@ $(function () {
       e.stopPropagation();
       var href = $(e.currentTarget).attr('href');
       // console.log(href);
-
 
       PB.router.navigate(href, true);
     });

@@ -3,8 +3,6 @@ var PB = PB || {};
 (function () {
 	'use strict';
 
-	// Todo Router
-	// ----------
 	PB.PollabearRouter = Backbone.Router.extend({
 		routes: {
 			'': 'home',
@@ -12,12 +10,47 @@ var PB = PB || {};
 			'category/:category': 'category',
 			'create': 'create',
 			'profile': 'profile', 
-			'poll/:id': 'poll'
+			'poll/:id': 'poll',
+			'login': 'login'
 			// 'search(?*querystring)': 'search'
 		},
 
-		home: function () {
+		parseQueryString : function(queryString) {
+			var params = {}, queries, temp, i, l;
+
+			if (!queryString) return params;
+
+			// Split into key/value pairs
+			queries = queryString.split("&");
+			// Convert the array of strings into an object
+			for ( i = 0, l = queries.length; i < l; i++ ) {
+				temp = queries[i].split('=');
+				params[temp[0]] = temp[1];
+			}
+			return params;
+		},
+
+		execute: function (callback, args, name) {
+			var needsAuth = (Backbone.history.getFragment() != 'login');
+			var isAuth = true;
+			PB.elements.nav.$el.show();
+			if (needsAuth && !isAuth) {
+				Backbone.history.navigate('login', { trigger : true });
+				return false;
+			} else if (!needsAuth && isAuth) {
+				Backbone.history.navigate('', { trigger : true });
+				return false;
+			} else {
+				args.push(this.parseQueryString(args.pop()));
+				if (callback) callback.apply(this, args);
+			}
+		},
+
+		home: function (params) {
 			console.log("home");
+			console.log(params);
+			console.log(typeof params);
+
 			PB.elements.transitionMain(PB.HomeView,{category: 'all'});
 		},
 
@@ -58,6 +91,17 @@ var PB = PB || {};
 			// PB.retrievedPolls.get(pollID)
 	
 			PB.elements.transitionMainOrOverlay(PB.PollDetail, {pollID: pollID});
+
+		},
+
+		login: function () {
+			console.log("login");
+			PB.elements.nav.$el.hide();
+			// PB.PollView.prototype.url = "poll/"+pollID;
+
+			// PB.retrievedPolls.get(pollID)
+	
+			// PB.elements.transitionMainOrOverlay(PB.PollDetail, {pollID: pollID});
 
 		}
 

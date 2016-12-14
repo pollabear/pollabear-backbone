@@ -1,13 +1,8 @@
 <div class="poll unanswered">  <!-- category-{{poll.category}}--shadow"> -->
 	<div class="poll-header">
-        <!-- <div class="poll-header-track"></div> -->
-        <!--  -->
-        <!-- <img class="poll-header-img" src="http://sites.psu.edu/edkawong/wp-content/uploads/sites/15056/2015/03/Tm70k2m.jpg"> -->
 
-        <div class="poll-header-text">
-        <a href="/poll/{{poll.id}}">
+        <div class="poll-header-text poll-header-text-expanded">
             {{poll.text}}
-        </a>
         </div>
     </div>
 
@@ -18,14 +13,14 @@
     {{#each poll.choices}}
 		<div class="choice textchoice" data-choiceid="{{this.id}}">
 	        <div class="textchoice-overlay category-{{../poll.category}}--background"></div>
-	        <div class="textchoice-main">
+	        <div class="textchoice-main textchoice-main-expanded">
 	            <div class="textchoice-main-check">
 	                <i class="material-icons icon-check">done</i>
 	            </div>
 	            <div class="textchoice-main-text">
 	                {{this.text}}
 	            </div>
-	            <div class="choice-percent-text"> 
+	            <div class="choice-percent-text choice-percent-text-expanded"> 
 
 	            </div>
 	        </div>
@@ -36,7 +31,7 @@
 	<!--  -->
 	<!--  -->
 
-	<div class="poll-footer-data">
+	<div class="poll-footer-data poll-footer-data-expanded">
         <a class="poll-footer-data-category" href="/category/{{poll.category}}">
             {{ upperCase poll.category }}
         </a>
@@ -62,37 +57,13 @@
             </span>
 
             <div class="dropdown-content poll-dropup-content clearfix" data-active=false>
-                <div class="poll-dropup-content-icon icon-facebook">Share</div>
+                <div class="poll-dropup-content-icon">Share</div>
                 <div class="poll-dropup-content-icon">Track</div>
                 <div class="poll-dropup-content-icon">Data</div>
                 <div class="poll-dropup-content-icon">Report</div>
             </div>
         </div>
 
-        <!-- <div class="clear"></div> -->
-
-
-        <!-- <div class="dropup icon-more">
-            <i class="material-icons md-36 icon-more icon-lightgrey" data-toggle="dropdown">poll</i>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li role="separator" class="divider"></li>
-                <li><a href="#">Separated link</a></li>
-            </ul>
-        </div> -->
-
-<!--     	<i class="material-icons md-36 icon-more icon-lightgrey">poll</i>
-    	<i class="material-icons md-36 icon-more icon-lightgrey">people</i>
-    	<i class="material-icons md-36 icon-more icon-lightgrey">comment</i>
-    	<i class="material-icons md-36 icon-more icon-lightgrey">favorite</i> -->
-
-    <!-- 	<p> -->
-	    	<!-- {{#each poll.tags}}
-	        <span>#{{this}}&#32</span>
-	        {{/each}} -->
-   <!--      </p> -->
     </div>
 
 </div>

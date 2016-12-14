@@ -50,6 +50,7 @@ var PB = PB || {};
 				// console.log(this.model);
 			}
 
+			// this.model.set('demographics')
 			// console.log(this.model);
 
 		},

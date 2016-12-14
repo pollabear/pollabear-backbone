@@ -4,7 +4,6 @@ var PB = PB || {};
 	'use strict';
 	PB.facebook = {};
 
-
 	$.getScript('//connect.facebook.net/en_US/sdk.js', function(){
 		FB.init({
 			appId: '1750824855143201',

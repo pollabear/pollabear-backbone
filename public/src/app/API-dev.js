@@ -226,7 +226,7 @@ var PB = PB || {};
 				id: Math.floor(Math.random()*(10000)),
 		  		isAnswered: Boolean(Math.floor(Math.random() * 2)),
 		  		text: this.pollTexts[Math.floor(Math.random()*(this.pollTexts.length))],
-		  		votes: Math.floor(Math.random()*(10000)),
+		  		votes: Math.floor(Math.random()*(1000)+1),
 		  		trackCount: Math.floor(Math.random()*(300)),
 		  		commentCount: Math.floor(Math.random()*(300)),
 		  		category: category,
@@ -313,6 +313,98 @@ var PB = PB || {};
 		"Something else here! should take 2 lines",
 		"Something else here! should take 3 lines now that I am getting big"
 	];
+
+	API_DEV.getPollDemographics = function (poll) {
+		var choiceCount;
+		var pollVotes;
+
+		 return {
+			sex: [0, 0, 0],
+			age: [0, 0, 0, 0, 0, 0, 0, 0],
+			sexual_orientation: [0, 0, 0, 0],
+			party_affiliation: [0, 0, 0, 0, 0],
+			education: [0, 0, 0, 0, 0],
+			religion: [0, 0, 0, 0, 0, 0],
+			employment: [0, 0, 0, 0, 0, 0],
+			ethnicity: [0, 0, 0, 0, 0, 0],
+			relationship: [0, 0, 0, 0],
+			residence: [0, 0, 0]
+		}
+
+		/* demographics: {
+			sex: {
+				male: 0,
+				female: 0,
+				other: 0
+			},
+			age: {
+			    years_under_12: 0,
+			    years_12_17: 0,
+			    years_18_24: 0,
+			    years_25_34: 0,
+			    years_35_44: 0,
+			    years_45_54: 0,
+			    years_55_64: 0,
+			    years_above_65: 0
+			},
+			sexual_orientation: {
+			    heterosexual: 0,
+			    homosexual: 0,
+			    bisexual: 0,
+			    other: 0
+			},
+			party_affiliation: {
+				Republican
+				Democrat
+				Independent 
+			    Other
+			    None
+			},
+			education: {
+			    High School or less
+			    Some College
+			    College Graduate
+			    Post-Graduate Degree
+			    Other
+			},
+			religion: {
+				Christianity
+				No religion
+				Judaism
+				Islam
+				Hinduism
+				Other
+			},
+			employment: {
+			    Employed
+			    Unemployed
+			    Student
+			    Retired
+			    Military
+			    Other
+			},
+			ethnicity: {
+			    Asian
+			    Black
+			    Latino
+			    Native American
+			    White
+			    Other
+			},
+			relationship: {
+			    Single
+			    Dating
+			    Married
+			    Other
+			 },
+			 residence: {
+			 	urban
+			 	rural
+			 	suburb
+			 },
+		} */
+
+	}
 
 
 	PB.API = API_DEV;

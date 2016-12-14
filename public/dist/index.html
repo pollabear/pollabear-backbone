@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
 <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge"> -->
-    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Replace with favicon -->
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <!-- <link rel="icon" href="/dist/assets/favicon.ico"> -->
@@ -28,36 +28,44 @@
 
 </head>
 <body> 
-
-    <ul id="nav" class="navbar navbar-fixed">
-        <li class="navbar-item"><a class="navbar-link" href="/">Pollabear</a></li>
-
-        <li class="navbar-item">
-            <!-- <div class="search-container"> -->
-                <!-- <input id="search-input" type="text" name="search" placeholder="Search"> -->
-            <!-- </div> -->
-        </li>
-        <ul class="navbar navbar-right-wrapper">
+    <div id="app">
+        <ul id="nav" class="navbar navbar-fixed">
             <li class="navbar-item">
-                <a class="navbar-link" href="/categories">Category</a>
+                <a class="navbar-link" href="/">
+                    <!-- <img src="/src/app/img/Pollabear_FGLogo.gif">  -->
+                    Pollabear
+                </a>
             </li>
-            <li class="navbar-item"><a class="navbar-link" href="/create">Create</a></li>
-            <li class="navbar-item"><a class="navbar-link" href="/profile">Profile</a></li>
+
+            <li class="navbar-item">
+                <!-- <div class="search-container"> -->
+                    <!-- <input id="search-input" type="text" name="search" placeholder="Search"> -->
+                <!-- </div> -->
+            </li>
+            <ul class="navbar navbar-right-wrapper">
+                <li class="navbar-item">
+                    <a class="navbar-link" href="/categories">Category</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="/create">Create</a>
+                </li>
+                <li class="navbar-item">
+                    <a class="navbar-link" href="/profile">Profile</a>
+                </li>
+            </ul>
         </ul>
-    </ul>
 
-    <div id="main"></div>
+        <div id="main"></div>
 
-    <div id="overlay" class="hidden">
-        <div id="overlay-exit">X</div>
-        <!-- <div id="overlay-background"></div> -->
-        <div id="overlay-content"></div>
+        <div id="overlay" class="hidden">
+            <div id="overlay-exit">X</div>
+            <!-- <div id="overlay-background"></div> -->
+            <div id="overlay-content"></div>
+        </div>
     </div>
 
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- InfinityJS 
-    <script src="/libs/infinity.min.js"></script> -->
     <!-- UnderscoreJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
     <!-- BackboneJS -->
@@ -65,7 +73,6 @@
     <!-- Handlebars Runtime -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.runtime.min.js"></script>
     <!-- Masonry Runtime -->
-    <!-- <script src="https://npmcdn.com/masonry-layout@4.0/dist/masonry.pkgd.min.js"></script> -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/masonry/3.3.2/masonry.pkgd.min.js"></script>
     <!-- ChartJS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
@@ -73,7 +80,7 @@
     <script src="//cdn.jsdelivr.net/velocity/1.2.3/velocity.min.js"></script>
 
 
-    <!--<script src="https://oss.maxcdn.com/semantic-ui/2.1.8/semantic.min.js"></script>-->
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/foggy/1.1.1/jquery.foggy.min.js"></script> -->
 
 
     

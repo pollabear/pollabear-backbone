@@ -29,7 +29,7 @@ module.exports = function(grunt) {
     //---------------------------- jshint ----------------------------//
 
     jshint: {
-          all: ['public/src/**/*.js'] 
+      all: ['public/src/**/*.js'] 
     },
 
     //---------------------------- uglify ----------------------------//
@@ -41,6 +41,19 @@ module.exports = function(grunt) {
         },
         options: {
           mangle: true
+        }
+      }
+    },
+
+    //---------------------------- sass ----------------------------//
+
+    sass: {                              // Task
+      dist: {                            // Target
+        options: {                       // Target options
+          style: 'expanded'
+        },
+        files: {                         // Dictionary of files
+           'public/src/app/styles/main_compiled.css' : 'public/src/app/styles/main.scss'   // 'destination': 'source'
         }
       }
     },
@@ -114,16 +127,18 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-handlebars');
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-nodemon');
   grunt.loadNpmTasks('grunt-concurrent');
   
-  grunt.registerTask('run', ['cssmin', 'handlebars:compile', 'uglify', 'targethtml:dist', 'concurrent']);
-  grunt.registerTask('build', ['less', 'cssmin', 'handlebars:compile', 'jshint', 'uglify', 'targethtml:dist']);
-  grunt.registerTask('default', ['nodemon:dev']); 
+  grunt.registerTask('default', ['sass:dist', 'cssmin', 'handlebars:compile', 'uglify', 'targethtml:dist', 'concurrent']);
+  grunt.registerTask('watching', ['sass:dist', 'cssmin', 'handlebars:compile', 'uglify', 'targethtml:dist', 'watch']);
+  grunt.registerTask('build', ['sass:dist', 'cssmin', 'handlebars:compile', 'uglify', 'targethtml:dist']);
+  // grunt.registerTask('default', ['nodemon:dev']); 
 
 
-  grunt.registerTask('default', ['handlebars:compile']); 
+  // grunt.registerTask('default', ['handlebars:compile']); 
 
 };

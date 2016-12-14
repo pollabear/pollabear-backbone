@@ -85,7 +85,7 @@ var PB = PB || {};
 				this.setError(1);
 			} 
 
-			else if (lastErrorStatus && ((currentCharCount <= maxCharCount) || (currentCharCount > 0))) {
+			else if (lastErrorStatus && ((currentCharCount <= maxCharCount) && (currentCharCount > 0))) {
 				console.log('remove char count error');
 				$charCount.removeClass('char-count-error');
 				$charCount.data('error', false);
@@ -96,9 +96,15 @@ var PB = PB || {};
 
 		addChoiceInput: function(e) {
 			console.log('addChoice');
-			var $newChoiceInput = $(this.choiceInputHtml).hide()
+			var $newChoiceInput = $(this.choiceInputHtml).hide();
 			this.$choiceSection.append($newChoiceInput);
 			$newChoiceInput.show(300);
+
+			// $newChoiceInput.velocity({
+			// 	opacity: [ 1, 0 ],
+			// 	height: [$newChoiceInput.height(), 0],
+			// 	width: [$newChoiceInput.width(), 0]
+			// }, 300);
 
 			this.setError(1);
 

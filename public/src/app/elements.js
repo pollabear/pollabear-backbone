@@ -42,24 +42,7 @@ var PB = PB || {};
 	        // ADD ANIMATION
 	        self.overlay.$el.velocity({opacity : 1}, 180);
 
-
-
-
-
         }, 100);
-
-  //       this.overlay.active = true;
-
-  //       this.overlay.view = new view(options);
-		// this.overlay.$content.html(this.overlay.view.$el);
-		// this.overlay.view.render();
-
-  //       // ADD ANIMATION
-  //       this.overlay.$el.velocity({opacity : 1}, 200);
-
-
-
-
 
     };
 
@@ -102,7 +85,6 @@ var PB = PB || {};
 	elements.transitionMainOrOverlay = function (view, options) {
 		if (!this.main.active) {
 			this.transitionMain(view, options);
-
 			// add active class to navbar category tab
 
 		} else {
