@@ -231,7 +231,8 @@ var PB = PB || {};
 		sharePoll : function (e) {
 			e.stopPropagation();
 			// PB.facebook.share("http://localhost:5000/poll/" + this.model.id);
-			PB.Auth.facebookLogin();
+			// PB.Auth.facebookLogin();
+			PB.facebook.login();
 		},
 
 
